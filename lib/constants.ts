@@ -8,3 +8,16 @@ export const SITE_CONSTANT = {
     personalSite: "https://salmoon.vercel.app",
   },
 }
+
+export const SKILL = [
+  "/icons/react.svg",
+  "/icons/next.svg",
+  "/icons/vue.svg",
+  "/icons/supabase.svg",
+  "/icons/tailwindcss.svg",
+  "/icons/python.svg",
+  "/icons/firebase.svg",
+  "/icons/prisma.svg",
+
+]
+

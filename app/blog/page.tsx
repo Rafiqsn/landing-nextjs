@@ -1,26 +1,28 @@
-import { posts } from "#site/content"
-
-import { sortPosts } from "@/lib/utils"
+import { posts } from "#site/content";
+import Link from "next/link";
+import { sortPosts } from "@/lib/utils";
 
 export default async function Page() {
-  const sortedPosts = sortPosts(posts.filter((post) => post.published))
+  const sortedPosts = sortPosts(posts.filter((post) => post.published));
 
   return (
-    <div className="">
+    <div>
       {sortedPosts?.length > 0 ? (
-        <ul className="">
+        <ul>
           {sortedPosts.map((post) => {
-            const { title, slug } = post
+            const { title, slug } = post;
             return (
-              <li key={title}>
-                <p>{title}</p>
+              <li key={slug}>
+                <Link href={slug}>
+                {title}
+                </Link>
               </li>
-            )
+            );
           })}
         </ul>
       ) : (
         <p>Nothing to see here yet</p>
       )}
     </div>
-  )
+  );
 }
